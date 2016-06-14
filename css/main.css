@@ -1,0 +1,2356 @@
+/*------------------------------------------------------------------
+
+    Project:    Avelar
+    Version:    1.0
+    Author:     Viewnow
+
+
+
+    [Table of contents]
+
+    01. MAIN STYLES
+    02. PRELOADER
+    03. HEADER
+    04. MENU
+    05. ARROW LINKS
+    06. HERO
+    07. HERO SLIDER
+    08. PORTFOLIO
+    09. PORTFOLIO FILTER
+    10. blockquote
+    11. SKILLS
+    12. COUNTERS
+    13. TEAM
+    14. TABS
+    15. TOGGLES
+    16. ICON BOX
+    17. IMAGE SLIDER
+    18. BLOG
+    19. CLIENTS
+    20. SCROLL TO TOP
+    21. GOOGLE MAP
+    22. CONTACT INFO
+    23. CONTACT FORM
+    24. PAGINATION
+    25. FOOTER
+
+-------------------------------------------------------------------*/
+
+/* 01. MAIN STYLES
+---------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Abel:400,900,700italic,700,500italic,500,400italic);
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,300,300ita%E2%80%8C%E2%80%8Blic,400italic,500,500italic,700,700italic,900italic,900");
+body,
+html {
+    height: 100% !important;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Abel', sans-serif;
+    font-weight: 400;
+    letter-spacing: .02em;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000;
+    position: relative;
+    background: #fff;
+}
+
+::-moz-selection {
+    background: #000;
+    color: #fff;
+}
+
+
+
+::-moz-selection {
+    background: #000;
+    color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+:focus {
+    outline: 0
+}
+
+a,
+a:hover,
+a:focus {
+    color: #000;
+    outline: 0;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: underline;
+}
+
+.text-light a {
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    border: none;
+}
+
+::-webkit-input-placeholder {
+    color: inherit
+}
+
+:-moz-placeholder {
+    color: inherit
+}
+
+::-moz-placeholder {
+    color: inherit
+}
+
+:-ms-input-placeholder {
+    color: inherit
+}
+
+
+/* typography
+---------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Abel', sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 54px;
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+h3 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+
+/* Responsive typography
+---------------------------*/
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 23px
+    }
+    h1 {
+        font-size: 34px;
+        line-height: 40px
+    }
+    h2 {
+        font-size: 30px;
+        line-height: 35px
+    }
+    h3 {
+        font-size: 26px;
+        line-height: 29px
+    }
+    h4 {
+        font-size: 22px;
+        line-height: 24px
+    }
+    h5 {
+        font-size: 17px;
+        line-height: 19px
+    }
+    h6 {
+        font-size: 13px;
+        line-height: 15px
+    }
+}
+
+.bottom-line {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.bottom-line:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #111;
+    bottom: -13px;
+}
+
+.text-light .bottom-line:after {
+    background: #fff;
+}
+
+p {
+    letter-spacing: .1em;
+    color: #444;
+}
+
+.text-light p {
+    color: #fff;
+}
+
+.text-dark p {
+    color: #000;
+}
+
+.font-alt {
+    font-family: 'Abel';
+    font-weight: 300;
+}
+
+.font {
+    font-size: 50px;
+    font-family: 'Abel';
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: #000;
+}
+
+.text-light .font {
+    color: #D0D0D0;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+    margin-top: 0
+}
+
+.bigtext {
+    font-size: 160px;
+    line-height: 1;
+    color: #008888;
+    font-weight: bold;
+    font-family: 'Abel';
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+}
+
+.page-error {
+    font-size: 50px;
+    font-family: 'Abel';
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: #008888;
+    text-transform: uppercase;
+    text-shadow: 0 -3px 0 #333, 0 6px 8px rgba(0, 0, 0, .4), 0 9px 10px rgba(0, 0, 0, .15), 0 30px 10px rgba(0, 0, 0, .18), 0 15px 10px rgba(0, 0, 0, .21);
+}
+
+@media (max-width: 992px) {
+    .bigtext {
+        font-size: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bigtext {
+        font-size: 70px;
+    }
+}
+
+.text-light {
+    color: #fff
+}
+
+.text-dark {
+    color: #000
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+.capitalize {
+    text-transform: capitalize
+}
+
+.bold {
+    font-weight: bold
+}
+
+.bolder {
+    font-weight: bolder
+}
+
+.italic {
+    font-style: italic
+}
+
+
+/*helper classes*/
+
+.fullwidth {
+    width: 100%
+}
+
+.fullheight {
+    height: 100%
+}
+
+.grey {
+    background-color: #F7F7F7
+}
+
+.black {
+    background-color: #000
+}
+
+.white {
+    background-color: #fff
+}
+
+.vCenter {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.highlight {
+    background-color: #000;
+    color: #fff;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.video-container iframe {
+    border: 0;
+}
+
+
+/* Paddings & Margins */
+
+.pad-0 {
+    padding: 0px !important
+}
+
+.pad-10 {
+    padding: 10px !important
+}
+
+.pad-20 {
+    padding: 20px !important
+}
+
+.pad-30 {
+    padding: 30px !important
+}
+
+.pad-40 {
+    padding: 40px !important
+}
+
+.pad-50 {
+    padding: 50px !important
+}
+
+.pad-60 {
+    padding: 60px !important
+}
+
+.pad-70 {
+    padding: 70px !important
+}
+
+.pad-80 {
+    padding: 80px !important
+}
+
+.pad-90 {
+    padding: 90px !important
+}
+
+.pad-100 {
+    padding: 100px !important
+}
+
+.pad-110 {
+    padding: 110px !important
+}
+
+.pad-120 {
+    padding: 120px !important
+}
+
+.mrg-0 {
+    margin: 0px !important
+}
+
+.mrg-10 {
+    margin: 10px !important
+}
+
+.mrg-20 {
+    margin: 20px !important
+}
+
+.mrg-30 {
+    margin: 30px !important
+}
+
+.mrg-40 {
+    margin: 40px !important
+}
+
+.mrg-50 {
+    margin: 50px !important
+}
+
+.mrg-60 {
+    margin: 60px !important
+}
+
+.mrg-70 {
+    margin: 70px !important
+}
+
+.mrg-80 {
+    margin: 80px !important
+}
+
+.mrg-90 {
+    margin: 90px !important
+}
+
+.mrg-100 {
+    margin: 100px !important
+}
+
+.mrg-110 {
+    margin: 110px !important
+}
+
+.mrg-120 {
+    margin: 120px !important
+}
+
+.pad-top-0 {
+    padding-top: 0px !important
+}
+
+.pad-top-10 {
+    padding-top: 10px !important
+}
+
+.pad-top-20 {
+    padding-top: 20px !important
+}
+
+.pad-top-30 {
+    padding-top: 30px !important
+}
+
+.pad-top-40 {
+    padding-top: 40px !important
+}
+
+.pad-top-50 {
+    padding-top: 50px !important
+}
+
+.pad-top-60 {
+    padding-top: 60px !important
+}
+
+.pad-top-70 {
+    padding-top: 70px !important
+}
+
+.pad-top-80 {
+    padding-top: 80px !important
+}
+
+.pad-top-90 {
+    padding-top: 90px !important
+}
+
+.pad-top-100 {
+    padding-top: 100px !important
+}
+
+.pad-top-110 {
+    padding-top: 110px !important
+}
+
+.pad-top-120 {
+    padding-top: 120px !important
+}
+
+.pad-btm-0 {
+    padding-bottom: 0px !important
+}
+
+.pad-btm-10 {
+    padding-bottom: 10px !important
+}
+
+.pad-btm-20 {
+    padding-bottom: 20px !important
+}
+
+.pad-btm-30 {
+    padding-bottom: 30px !important
+}
+
+.pad-btm-40 {
+    padding-bottom: 40px !important
+}
+
+.pad-btm-50 {
+    padding-bottom: 50px !important
+}
+
+.pad-btm-60 {
+    padding-bottom: 60px !important
+}
+
+.pad-btm-70 {
+    padding-bottom: 70px !important
+}
+
+.pad-btm-80 {
+    padding-bottom: 80px !important
+}
+
+.pad-btm-90 {
+    padding-bottom: 90px !important
+}
+
+.pad-btm-100 {
+    padding-bottom: 100px !important
+}
+
+.pad-btm-110 {
+    padding-bottom: 110px !important
+}
+
+.pad-btm-120 {
+    padding-bottom: 120px !important
+}
+
+.mrg-top-0 {
+    margin-top: 0px !important
+}
+
+.mrg-top-10 {
+    margin-top: 10px !important
+}
+
+.mrg-top-20 {
+    margin-top: 20px !important
+}
+
+.mrg-top-30 {
+    margin-top: 30px !important
+}
+
+.mrg-top-40 {
+    margin-top: 40px !important
+}
+
+.mrg-top-50 {
+    margin-top: 50px !important
+}
+
+.mrg-top-60 {
+    margin-top: 60px !important
+}
+
+.mrg-top-70 {
+    margin-top: 70px !important
+}
+
+.mrg-top-80 {
+    margin-top: 80px !important
+}
+
+.mrg-top-90 {
+    margin-top: 90px !important
+}
+
+.mrg-top-100 {
+    margin-top: 100px !important
+}
+
+.mrg-top-110 {
+    margin-top: 110px !important
+}
+
+.mrg-top-120 {
+    margin-top: 120px !important
+}
+
+.mrg-btm-0 {
+    margin-bottom: 0px !important
+}
+
+.mrg-btm-10 {
+    margin-bottom: 10px !important
+}
+
+.mrg-btm-20 {
+    margin-bottom: 20px !important
+}
+
+.mrg-btm-30 {
+    margin-bottom: 30px !important
+}
+
+.mrg-btm-40 {
+    margin-bottom: 40px !important
+}
+
+.mrg-btm-50 {
+    margin-bottom: 50px !important
+}
+
+.mrg-btm-60 {
+    margin-bottom: 60px !important
+}
+
+.mrg-btm-70 {
+    margin-bottom: 70px !important
+}
+
+.mrg-btm-80 {
+    margin-bottom: 80px !important
+}
+
+.mrg-btm-90 {
+    margin-bottom: 90px !important
+}
+
+.mrg-btm-100 {
+    margin-bottom: 100px !important
+}
+
+.mrg-btm-110 {
+    margin-bottom: 110px !important
+}
+
+.mrg-btm-120 {
+    margin-bottom: 120px !important
+}
+
+
+/* Spacers & Separators
+---------------------------*/
+
+.spacer-mini,
+.spacer-small,
+.spacer-medium,
+.spacer-big {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+}
+
+.spacer-mini {
+    height: 14px
+}
+
+.spacer-small {
+    height: 40px
+}
+
+.spacer-medium {
+    height: 80px
+}
+
+.spacer-big {
+    height: 120px
+}
+
+@media (max-width: 992px) {
+    .spacer-big {
+        height: 100px
+    }
+}
+
+@media (max-width: 768px) {
+    .spacer-mini {
+        height: 10px
+    }
+    .spacer-small {
+        height: 30px
+    }
+    .spacer-medium {
+        height: 50px
+    }
+    .spacer-big {
+        height: 80px
+    }
+}
+
+.separator,
+.separator-left,
+.separator-right {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.separator:after,
+.separator-left:after,
+.separator-right:after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+}
+
+.separator:after {
+    left: 50%;
+    margin-left: -20px;
+}
+
+.separator-left:after {
+    left: 0;
+    margin-left: 0;
+}
+
+.separator-right:after {
+    right: 0;
+    margin-left: 0;
+    left: auto;
+}
+
+.text-light [class*="separator"]:after {
+    background-color: #fff
+}
+
+.darkbg [class*="separator"]:after {
+    background-color: #fff
+}
+
+[class*="spacer-"] {
+    font-size: 4em
+}
+
+[class*="spacer-"]:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+/* buttons
+---------------------------*/
+
+.button {
+    font-family: 'Abel', sans-serif;
+    font-size: 13px;
+    padding: 5px 24px;
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .2s, color .2s, border-color .2s;
+}
+
+.button:hover {
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+}
+
+.button.light {
+    background: #fff;
+    color: #000;
+}
+
+.button.light:hover {
+    background: #f4f4f4;
+}
+
+.button.outline {
+    background: #008888;
+    color: #000;
+    border: 3px solid;
+    padding: 3px 22px;
+}
+
+.button.outline.light {
+    color: #000;
+}
+
+.button.outline:hover {
+    background: #008888;
+    border-color: #000;
+    color: #fff;
+}
+
+.button.outline.light:hover {
+    background: black !important;
+    border-color: #fff;
+    color: #fff;
+}
+
+
+/* overlays
+---------------------------*/
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.overlay-light {
+    background-color: rgba(255, 255, 255, 0.25)
+}
+
+.overlay-light-2x {
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.overlay-light-3x {
+    background-color: rgba(255, 255, 255, 0.75)
+}
+
+.overlay-light-4x {
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+.overlay-dark {
+    background-color: rgba(0, 0, 0, 0.25)
+}
+
+.overlay-dark-2x {
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.overlay-dark-3x {
+    background-color: rgba(0, 0, 0, 0.75)
+}
+
+.overlay-dark-4x {
+    background-color: rgba(0, 0, 0, 0.9)
+}
+
+[class*="overlay-dark"] ~ *,
+[class*="overlay-light"] ~ * {
+    position: relative
+}
+
+
+/* parallax images
+---------------------------*/
+
+[data-stellar-background-ratio] {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+@media (max-width: 1024px) {
+    [data-stellar-background-ratio] {
+        background-attachment: scroll;
+        background-position: center !important;
+    }
+    .bg-fixed {
+        background-attachment: scroll;
+    }
+}
+
+
+/* bootstrap columns
+---------------------------*/
+
+.container,
+section,
+section > * {
+    position: relative;
+}
+
+.container.no-padding [class*="col-"] {
+    padding: 0;
+}
+
+.col-center {
+    float: none;
+    margin: 0 auto;
+}
+
+.col-right {
+    float: right;
+}
+
+@media (max-width: 991px) {
+    [class*="col-md"] {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    [class*="col-sm"] {
+        margin-bottom: 40px;
+    }
+}
+
+.equal-height [class*="col-"] {
+    margin-bottom: 0;
+}
+
+.pad-0 {
+    margin-bottom: 0;
+}
+
+
+/* 02. PRELOADER
+------------------------------*/
+
+.animsition-loading {
+    background: none !important;
+}
+
+.animsition-loading:after {
+    display: none !important;
+}
+
+.animsition-loading:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-right: -20px;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+}
+
+
+@keyframes scaleout {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+
+/* 03. HEADER
+-------------------------*/
+
+header {
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+header.absolute {
+    position: absolute;
+    margin-bottom: 0;
+}
+
+header .logo {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* 04. MENU
+----------------*/
+
+
+/* 04. MENU
+----------------*/
+
+#topmenu {
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+
+#topmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+#topmenu ul li {
+    display: inline-block;
+    position: relative;
+}
+
+#topmenu ul li a {
+    display: block;
+    float: left;
+    font-family: 'Abel';
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 15px;
+    line-height: 45px;
+    transition: all .3s ease;
+}
+
+#topmenu ul li a:hover {
+    opacity: .7;
+}
+
+#topmenu ul ul {
+    position: absolute;
+    left: 5px;
+    top: 45px;
+    width: 160px;
+    padding: 5px 0;
+    border: 1px solid #333;
+    display: none;
+    background-color: #fff;
+}
+
+#topmenu ul ul:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-bottom: 0;
+    border-right: 0;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    left: 10px;
+    top: -6px;
+}
+
+#topmenu > ul > li:hover ul {
+    display: block;
+}
+
+#topmenu ul ul li {
+    display: block;
+}
+
+#topmenu ul ul li a {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 22px;
+    padding-left: 14px;
+    width: 100%;
+    text-align: left;
+    font-family: 'lato';
+}
+
+.mob-nav {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto 10px;
+    font-size: 14px;
+}
+
+@media(max-width: 767px) {
+    .mob-nav {
+        display: block;
+    }
+    #topmenu {
+        display: none;
+        position: absolute;
+        padding-bottom: 20px;
+        margin-bottom: 50px;
+    }
+    #topmenu ul {}
+    #topmenu ul li {
+        display: block;
+    }
+    #topmenu ul li a {
+        float: none;
+        line-height: 35px;
+    }
+    #topmenu ul ul {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0
+    }
+    #topmenu ul ul li a {
+        text-align: center;
+    }
+    #topmenu ul ul:before {
+        display: none;
+    }
+}
+
+@media(min-width: 768px) {
+    #topmenu {
+        display: block !important;
+    }
+}
+
+
+/* 05. ARROW LINKS
+--------------------------*/
+
+.side-link {
+    display: inline-block;
+    position: fixed;
+    text-decoration: none;
+    top: 50%;
+    z-index: 9999;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.left.side-link {
+    left: 10px;
+}
+
+.right.side-link {
+    right: 10px;
+}
+
+.side-link .side-title {
+    font-family: 'Abel';
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    width: 1em;
+    font-size: 18px;
+    line-height: 1.2;
+    transition: all .5s ease;
+}
+
+.left.side-link .side-title {
+    margin-left: 10px;
+}
+
+.right.side-link .side-title {
+    margin-right: 10px;
+}
+
+.side-arrow:before,
+.side-arrow:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 50%;
+    background-color: #000;
+    transition: all .5s ease;
+}
+
+.left .side-arrow:before,
+.left .side-arrow:after {
+    left: 0px;
+}
+
+.right .side-arrow:before,
+.right .side-arrow:after {
+    right: 0px;
+}
+
+.left .side-arrow:before {
+    bottom: 50%;
+    -webkit-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    transform-origin: bottom left;
+}
+
+.left .side-arrow:after {
+    top: 50%;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.right .side-arrow:before {
+    bottom: 50%;
+    -webkit-transform-origin: bottom right;
+    -ms-transform-origin: bottom right;
+    transform-origin: bottom right;
+}
+
+.right .side-arrow:after {
+    top: 50%;
+    -webkit-transform-origin: top right;
+    -ms-transform-origin: top right;
+    transform-origin: top right;
+}
+
+.left.side-link:hover .side-arrow:before {
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.left.side-link:hover .side-arrow:after {
+    height: 30px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.left.side-link:hover .side-title {
+    margin-left: 40px;
+    opacity: 0;
+}
+
+.right.side-link:hover .side-arrow:before {
+    height: 30px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.right.side-link:hover .side-arrow:after {
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.right.side-link:hover .side-title {
+    margin-right: 40px;
+    opacity: 0;
+}
+
+
+/* 06. HERO
+------------------------*/
+
+.hero {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: 200px;
+    background-position: center;
+    overflow: hidden;
+    border: 2px solid #333;
+}
+
+.hero-inner {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+}
+
+
+/* BACKGROUND SLIDER
+--------------------------*/
+
+.swatch {
+    float: left;
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 0%;
+    text-align: center;
+    font-size: 12px;
+    color: darkorange;
+    line-height: 420px;
+    background-color: yellow;
+}
+
+.swatch {
+    background-color: yellow;
+}
+
+.cross {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 20%, #ffffff 20%, #ffffff 80%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0)), radial-gradient(circle, rgba(0, 0, 0, 0) 20%, #ffffff 20%, #ffffff 80%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0)) 50px 50px, linear-gradient(black 8px, transparent 8px) 0 -4px, linear-gradient(90deg, black 8px, transparent 8px) -4px 0;
+    background-color: white;
+    background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+}
+
+.zigzag {
+    background: linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -25px 0, linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -25px 0, linear-gradient(315deg, #ECEDDC 25%, transparent 25%), linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+    background-size: 50px 50px;
+    background-color: #000000;
+}
+
+.multizigzag {
+    background: linear-gradient(to right top, rgba(242, 56, 90, 0) 0.48544em, #F2385A 0.48544em, #F2385A, #d00e31 1.31877em, rgba(242, 56, 90, 0) 1.31877em) 0 0, linear-gradient(to left top, rgba(242, 56, 90, 0) 0.48544em, #F2385A 0.48544em, #F2385A, #d00e31 1.31877em, rgba(242, 56, 90, 0) 1.31877em) 0 0, linear-gradient(to right bottom, rgba(242, 56, 90, 0) 0.48544em, #d00e31 0.48544em, #F2385A, #F2385A 1.31877em, rgba(242, 56, 90, 0) 1.31877em) 2.5em 0, linear-gradient(to left bottom, rgba(242, 56, 90, 0) 0.48544em, #d00e31 0.48544em, #F2385A, #F2385A 1.31877em, rgba(242, 56, 90, 0) 1.31877em) 2.5em 0, linear-gradient(to right top, rgba(245, 165, 3, 0) 0.48544em, #F5A503 0.48544em, #F5A503, #c38302 1.31877em, rgba(245, 165, 3, 0) 1.31877em) 0 1em, linear-gradient(to left top, rgba(245, 165, 3, 0) 0.48544em, #F5A503 0.48544em, #F5A503, #c38302 1.31877em, rgba(245, 165, 3, 0) 1.31877em) 0 1em, linear-gradient(to right bottom, rgba(245, 165, 3, 0) 0.48544em, #c38302 0.48544em, #F5A503, #F5A503 1.31877em, rgba(245, 165, 3, 0) 1.31877em) 2.5em 1em, linear-gradient(to left bottom, rgba(245, 165, 3, 0) 0.48544em, #c38302 0.48544em, #F5A503, #F5A503 1.31877em, rgba(245, 165, 3, 0) 1.31877em) 2.5em 1em, linear-gradient(to right top, rgba(233, 241, 223, 0) 0.48544em, #E9F1DF 0.48544em, #E9F1DF, #c4daaa 1.31877em, rgba(233, 241, 223, 0) 1.31877em) 0 2em, linear-gradient(to left top, rgba(233, 241, 223, 0) 0.48544em, #E9F1DF 0.48544em, #E9F1DF, #c4daaa 1.31877em, rgba(233, 241, 223, 0) 1.31877em) 0 2em, linear-gradient(to right bottom, rgba(233, 241, 223, 0) 0.48544em, #c4daaa 0.48544em, #E9F1DF, #E9F1DF 1.31877em, rgba(233, 241, 223, 0) 1.31877em) 2.5em 2em, linear-gradient(to left bottom, rgba(233, 241, 223, 0) 0.48544em, #c4daaa 0.48544em, #E9F1DF, #E9F1DF 1.31877em, rgba(233, 241, 223, 0) 1.31877em) 2.5em 2em, linear-gradient(to right top, rgba(74, 217, 217, 0) 0.48544em, #4AD9D9 0.48544em, #4AD9D9, #25b1b1 1.31877em, rgba(74, 217, 217, 0) 1.31877em) 0 3em, linear-gradient(to left top, rgba(74, 217, 217, 0) 0.48544em, #4AD9D9 0.48544em, #4AD9D9, #25b1b1 1.31877em, rgba(74, 217, 217, 0) 1.31877em) 0 3em, linear-gradient(to right bottom, rgba(74, 217, 217, 0) 0.48544em, #25b1b1 0.48544em, #4AD9D9, #4AD9D9 1.31877em, rgba(74, 217, 217, 0) 1.31877em) 2.5em 3em, linear-gradient(to left bottom, rgba(74, 217, 217, 0) 0.48544em, #25b1b1 0.48544em, #4AD9D9, #4AD9D9 1.31877em, rgba(74, 217, 217, 0) 1.31877em) 2.5em 3em, linear-gradient(to right top, rgba(54, 177, 191, 0) 0.48544em, #36B1BF 0.48544em, #36B1BF, #257a83 1.31877em, rgba(54, 177, 191, 0) 1.31877em) 0 4em, linear-gradient(to left top, rgba(54, 177, 191, 0) 0.48544em, #36B1BF 0.48544em, #36B1BF, #257a83 1.31877em, rgba(54, 177, 191, 0) 1.31877em) 0 4em, linear-gradient(to right bottom, rgba(54, 177, 191, 0) 0.48544em, #257a83 0.48544em, #36B1BF, #36B1BF 1.31877em, rgba(54, 177, 191, 0) 1.31877em) 2.5em 4em, linear-gradient(to left bottom, rgba(54, 177, 191, 0) 0.48544em, #257a83 0.48544em, #36B1BF, #36B1BF 1.31877em, rgba(54, 177, 191, 0) 1.31877em) 2.5em 4em;
+    background-color: linen;
+    background-size: 5em 5em;
+}
+
+.cubo {
+    background-color: #000;
+    background-image: linear-gradient(30deg, #800 12%, transparent 12.5%, transparent 87%, #800 87.5%, #800), linear-gradient(150deg, #800 12%, transparent 12.5%, transparent 87%, #800 87.5%, #800), linear-gradient(30deg, #800 12%, transparent 12.5%, transparent 87%, #800 87.5%, #800), linear-gradient(150deg, #800 12%, transparent 12.5%, transparent 87%, #800 87.5%, #800), linear-gradient(60deg, #ffffcc 25%, transparent 25.5%, transparent 75%, #ffffcc 75%, #ffffcc), linear-gradient(60deg, #ffffcc 25%, transparent 25.5%, transparent 75%, #ffffcc 75%, #ffffcc);
+    background-size: 40px 70px;
+    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+}
+
+.scalino {
+    background-color: #f76;
+    background-image: linear-gradient(30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%), linear-gradient(-30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%), linear-gradient(30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%), linear-gradient(-30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%), linear-gradient(30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%), linear-gradient(-30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%), linear-gradient(30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%), linear-gradient(-30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%), linear-gradient(45deg, #544 25%, transparent 25%, transparent 75%, #544 75%), linear-gradient(45deg, #544 25%, transparent 25%, transparent 75%, #544 75%);
+    background-position: 0em 2em, 0em 2em, 2em 4em, 2em 4em, 4em 2em, 4em 2em, 6em 4em, 6em 4em, 0em 0em, 2em 2em;
+    background-size: 8em 4em, 8em 4em, 8em 4em, 8em 4em, 8em 4em, 8em 4em, 8em 4em, 8em 4em, 4em 4em, 4em 4em;
+}
+
+.piastrella {
+    background-color: #000000;
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 10%, #ffffff 12%, #ffffff 18%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 44%, #ffffff 46%, #ffffff 52%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, 0) 83%, #ffffff 85%, #ffffff 91%, #850008 93%);
+    background-size: 78px 78px;
+    background-position: 0 0;
+}
+
+.pinkcloud {
+    background: radial-gradient(2em at center 2.2em, #ffffff 5.7%, #ff9e9d 6.84%, #ff9e9d 11.4%, #ffffff 12.54%, #ffffff 17.1%, #ff9e9d 18.24%, #ff9e9d 22.8%, #ffffff 23.94%, #ffffff 28.5%, #ff9e9d 29.64%, #ff9e9d 34.2%, #ffffff 35.34%, #ffffff 39.9%, #ff9e9d 41.04%, #ff9e9d 45.6%, #ffffff 46.74%, #ffffff 51.3%, #ff9e9d 52.44%, #ff9e9d 57%, rgba(255, 158, 157, 0) 58.14%) 0 0, radial-gradient(2em at center 2.2em, #ffffff 5.7%, #ff9e9d 6.84%, #ff9e9d 11.4%, #ffffff 12.54%, #ffffff 17.1%, #ff9e9d 18.24%, #ff9e9d 22.8%, #ffffff 23.94%, #ffffff 28.5%, #ff9e9d 29.64%, #ff9e9d 34.2%, #ffffff 35.34%, #ffffff 39.9%, #ff9e9d 41.04%, #ff9e9d 45.6%, #ffffff 46.74%, #ffffff 51.3%, #ff9e9d 52.44%, #ff9e9d 57%, rgba(255, 158, 157, 0) 58.14%) 1em 1em, radial-gradient(2em at center 1.2em, #ffffff 5.7%, #ff9e9d 6.84%, #ff9e9d 11.4%, #ffffff 12.54%, #ffffff 17.1%, #ff9e9d 18.24%, #ff9e9d 22.8%, #ffffff 23.94%, #ffffff 28.5%, #ff9e9d 29.64%, #ff9e9d 34.2%, #ffffff 35.34%, #ffffff 39.9%, #ff9e9d 41.04%, #ff9e9d 45.6%, #ffffff 46.74%, #ffffff 51.3%, #ff9e9d 52.44%, #ff9e9d 57%, rgba(255, 158, 157, 0) 58.14%) 0 1em, radial-gradient(2em at center 0.2em, #ffffff 5.7%, #ff9e9d 6.84%, #ff9e9d 11.4%, #ffffff 12.54%, #ffffff 17.1%, #ff9e9d 18.24%, #ff9e9d 22.8%, #ffffff 23.94%, #ffffff 28.5%, #ff9e9d 29.64%, #ff9e9d 34.2%, #ffffff 35.34%, #ffffff 39.9%, #ff9e9d 41.04%, #ff9e9d 45.6%, #ffffff 46.74%, #ffffff 51.3%, #ff9e9d 52.44%, #ff9e9d 57%, rgba(255, 158, 157, 0) 58.14%) 1em 1em;
+    background-color: #FFF;
+    background-size: 2em 2em;
+}
+
+.bluefish {
+    background: radial-gradient(circle at center 3em, #f2d03b 8.6%, #47d9bf 10.32%, #47d9bf 17.2%, #00a1d9 18.92%, #00a1d9 25.8%, #04518c 27.52%, #04518c 34.4%, #003056 36.12%, #003056 43%, rgba(0, 48, 86, 0) 47.3%) 0 0, radial-gradient(circle at center 3em, #f2d03b 8.6%, #47d9bf 10.32%, #47d9bf 17.2%, #00a1d9 18.92%, #00a1d9 25.8%, #04518c 27.52%, #04518c 34.4%, #003056 36.12%, #003056 43%, rgba(0, 48, 86, 0) 47.3%) 1.5em 1.5em, radial-gradient(circle at center 0, #f2d03b 8.6%, #47d9bf 10.32%, #47d9bf 17.2%, #00a1d9 18.92%, #00a1d9 25.8%, #04518c 27.52%, #04518c 34.4%, #003056 36.12%, #003056 43%, rgba(0, 48, 86, 0) 47.3%) 0 0, radial-gradient(circle at center 0, #f2d03b 8.6%, #47d9bf 10.32%, #47d9bf 17.2%, #00a1d9 18.92%, #00a1d9 25.8%, #04518c 27.52%, #04518c 34.4%, #003056 36.12%, #003056 43%, rgba(0, 48, 86, 0) 47.3%) 1.5em 1.5em;
+    background-color: #F2D03B;
+    background-size: 3em 3em;
+}
+
+.silverscale {
+    background: radial-gradient(circle at center 0, #b1c2b3 6.5%, #778691 6.5%, #778691 13%, #c7b773 14.3%, #c7b773 19.5%, #e3db9a 20.8%, #e3db9a 26%, #f5fcd0 27.3%, #f5fcd0 32.5%, #b1c2b3 33.8%, #b1c2b3 39%, #778691 40.3%, #778691 45.5%, rgba(119, 134, 145, 0) 46.8%) 0 0, radial-gradient(circle at center 0, #b1c2b3 6.5%, #778691 6.5%, #778691 13%, #c7b773 14.3%, #c7b773 19.5%, #e3db9a 20.8%, #e3db9a 26%, #f5fcd0 27.3%, #f5fcd0 32.5%, #b1c2b3 33.8%, #b1c2b3 39%, #778691 40.3%, #778691 45.5%, rgba(119, 134, 145, 0) 46.8%) 1.5em 1.5em, radial-gradient(circle at center 3em, #b1c2b3 6.5%, #778691 6.5%, #778691 13%, #c7b773 14.3%, #c7b773 19.5%, #e3db9a 20.8%, #e3db9a 26%, #f5fcd0 27.3%, #f5fcd0 32.5%, #b1c2b3 33.8%, #b1c2b3 39%, #778691 40.3%, #778691 45.5%, rgba(119, 134, 145, 0) 46.8%) 0 0, radial-gradient(circle at center 3em, #b1c2b3 6.5%, #778691 6.5%, #778691 13%, #c7b773 14.3%, #c7b773 19.5%, #e3db9a 20.8%, #e3db9a 26%, #f5fcd0 27.3%, #f5fcd0 32.5%, #b1c2b3 33.8%, #b1c2b3 39%, #778691 40.3%, #778691 45.5%, rgba(119, 134, 145, 0) 46.8%) 1.5em 1.5em;
+    background-color: #C7B773;
+    background-size: 3em 3em;
+}
+
+.frostyspirals {
+    background: radial-gradient(circle at right, rgba(233, 241, 223, 0) 0.33333em, #e9f1df 0.33333em, #e9f1df 0.48889em, rgba(233, 241, 223, 0) 0.48889em, rgba(233, 241, 223, 0) 0.82222em, #e9f1df 0.82222em, #e9f1df 0.97778em, rgba(233, 241, 223, 0) 0.97778em, rgba(233, 241, 223, 0) 1.31111em, #e9f1df 1.31111em, #e9f1df 1.46667em, rgba(233, 241, 223, 0) 1.46667em) 0 0, radial-gradient(circle at left, rgba(233, 241, 223, 0) 0.57778em, #e9f1df 0.57778em, #e9f1df 0.73333em, rgba(233, 241, 223, 0) 0.73333em, rgba(233, 241, 223, 0) 1.06667em, #e9f1df 1.06667em, #e9f1df 1.22222em, rgba(233, 241, 223, 0) 1.22222em) 0 3.05146em, linear-gradient(to right top, #E9F1DF 0.15556em, rgba(233, 241, 223, 0) 0.15556em) 1.22222em 0.15556em, linear-gradient(to left top, #E9F1DF 0.15556em, rgba(233, 241, 223, 0) 0.15556em) 1.22222em 0.15556em, linear-gradient(to right bottom, #E9F1DF 0.15556em, rgba(233, 241, 223, 0) 0.15556em) 1.22222em 0.15556em, linear-gradient(to left bottom, #E9F1DF 0.15556em, rgba(233, 241, 223, 0) 0.15556em) 1.22222em 0.15556em;
+    background-size: 2.8em 2.8em;
+    background-color: lightblue;
+}
+
+.squares {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, #36B1BF 0, #36B1BF 0.33em, rgba(255, 255, 255, 0) 0.33em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #36B1BF 0, #36B1BF 0.33em, rgba(255, 255, 255, 0) 0.33em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 0.33em, rgba(255, 255, 255, 0) 0.33em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 0.66em, rgba(255, 255, 255, 0) 0.66em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 0.33em, rgba(255, 255, 255, 0) 0.33em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 0.66em, rgba(255, 255, 255, 0) 0.66em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 0.66em, rgba(255, 255, 255, 0) 0.66em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 0.99em, rgba(255, 255, 255, 0) 0.99em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 0.66em, rgba(255, 255, 255, 0) 0.66em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 0.99em, rgba(255, 255, 255, 0) 0.99em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 0.99em, rgba(255, 255, 255, 0) 0.99em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 1.32em, rgba(255, 255, 255, 0) 1.32em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 0.99em, rgba(255, 255, 255, 0) 0.99em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 1.32em, rgba(255, 255, 255, 0) 1.32em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 1.32em, rgba(255, 255, 255, 0) 1.32em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 1.65em, rgba(255, 255, 255, 0) 1.65em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 1.32em, rgba(255, 255, 255, 0) 1.32em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 1.65em, rgba(255, 255, 255, 0) 1.65em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #36B1BF 0, #36B1BF 1.65em, rgba(255, 255, 255, 0) 1.65em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #36B1BF 0, #36B1BF 1.98em, rgba(255, 255, 255, 0) 1.98em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #36B1BF 0, #36B1BF 1.65em, rgba(255, 255, 255, 0) 1.65em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #36B1BF 0, #36B1BF 1.98em, rgba(255, 255, 255, 0) 1.98em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 1.98em, rgba(255, 255, 255, 0) 1.98em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 2.31em, rgba(255, 255, 255, 0) 2.31em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 1.98em, rgba(255, 255, 255, 0) 1.98em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #4AD9D9 0, #4AD9D9 2.31em, rgba(255, 255, 255, 0) 2.31em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 2.31em, rgba(255, 255, 255, 0) 2.31em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 2.64em, rgba(255, 255, 255, 0) 2.64em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 2.31em, rgba(255, 255, 255, 0) 2.31em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #E9F1DF 0, #E9F1DF 2.64em, rgba(255, 255, 255, 0) 2.64em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 2.64em, rgba(255, 255, 255, 0) 2.64em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 2.97em, rgba(255, 255, 255, 0) 2.97em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 2.64em, rgba(255, 255, 255, 0) 2.64em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #F5A503 0, #F5A503 2.97em, rgba(255, 255, 255, 0) 2.97em) 0 0, linear-gradient(to left, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 2.97em, rgba(255, 255, 255, 0) 2.97em) 0 0, linear-gradient(to right, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 3.3em, rgba(255, 255, 255, 0) 3.3em) 0 0, linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 2.97em, rgba(255, 255, 255, 0) 2.97em) 0 0, linear-gradient(to top, rgba(255, 255, 255, 0) 0, #F2385A 0, #F2385A 3.3em, rgba(255, 255, 255, 0) 3.3em) 0 0;
+    background-size: 6em 6em;
+    background-color: #E9F1DF;
+    background-repeat: repeat;
+}
+
+.funky1 {
+    background-position: center;
+    background-size: 100px 100px;
+    background-color: #ffffff;
+    background-image: linear-gradient(22.5deg, #f2f2f2 15%, transparent 15%, transparent 85%, #f2f2f2 85%), linear-gradient(112.5deg, #f2f2f2 15%, transparent 15%, transparent 85%, #f2f2f2 85%), linear-gradient(22.5deg, #f2f2f2 15%, transparent 15%, transparent 85%, #f2f2f2 85%), linear-gradient(112.5deg, #f2f2f2 15%, transparent 15%, transparent 85%, #f2f2f2 85%);
+}
+
+.funky2 {
+    background-position: center;
+    background-size: 100px 100px;
+    background-color: #ffffff;
+    background-image: linear-gradient(32.5deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%), linear-gradient(122.5deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%), linear-gradient(77.5deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%), linear-gradient(167.5deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%);
+}
+
+.funky3 {
+    background-position: center;
+    background-size: 100px 100px;
+    background-color: #ffffff;
+    background-image: linear-gradient(5deg, #f2f2f2 10%, transparent 10%, transparent 90%, #f2f2f2 90%), linear-gradient(95deg, #f2f2f2 10%, transparent 10%, transparent 90%, #f2f2f2 90%), linear-gradient(10deg, #f2f2f2 10%, transparent 10%, transparent 90%, #f2f2f2 90%), linear-gradient(100deg, #f2f2f2 10%, transparent 10%, transparent 90%, #f2f2f2 90%);
+}
+
+.funky4 {
+    background-position: center;
+    background-size: 100px 100px;
+    background-color: #ffffff;
+    background-image: linear-gradient(-5deg, #f2f2f2 5%, transparent 5%, transparent 95%, #f2f2f2 95%), linear-gradient(85deg, #f2f2f2 5%, transparent 5%, transparent 95%, #f2f2f2 95%), linear-gradient(40deg, #f2f2f2 5%, transparent 5%, transparent 95%, #f2f2f2 95%), linear-gradient(130deg, #f2f2f2 5%, transparent 5%, transparent 95%, #f2f2f2 95%);
+}
+
+.funky5 {
+    background-position: center;
+    background-size: 100px 100px;
+    background-color: #ffffff;
+    background-image: linear-gradient(45deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%), linear-gradient(135deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%), linear-gradient(45deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%), linear-gradient(135deg, #f2f2f2 25%, transparent 25%, transparent 75%, #f2f2f2 75%);
+}
+
+.funky6 {
+    background-position: center;
+    background-size: 100px 100px;
+    background-color: #ffffff;
+    background-image: linear-gradient(0deg, #f2f2f2 1%, transparent 1%, transparent 99%, #f2f2f2 99%), linear-gradient(90deg, #f2f2f2 1%, transparent 1%, transparent 99%, #f2f2f2 99%), linear-gradient(0deg, #f2f2f2 1%, transparent 1%, transparent 99%, #f2f2f2 99%), linear-gradient(90deg, #f2f2f2 1%, transparent 1%, transparent 99%, #f2f2f2 99%);
+}
+
+.horz-stripes {
+    background: linear-gradient(#000000 50%, #ffffff 0);
+    background-size: 100% 30px;
+}
+
+.vert-stripes {
+    background: linear-gradient(to right, #000 50%, #fff 0);
+    background-size: 30px 100%;
+}
+
+.diagonal-stripes {
+    background: repeating-linear-gradient(45deg, #ffffff, #ffffff 13px, #000000 0, #000000 30px);
+}
+
+.tablecloth {
+    background: white;
+    background-image: linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0), linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 0);
+    background-size: 30px 30px;
+}
+
+.blueprint-grid {
+    background: #58a;
+    background-image: linear-gradient(white 1px, transparent 0), linear-gradient(90deg, white 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+.better-blueprint-grid {
+    background: #58a;
+    background-image: linear-gradient(white 2px, transparent 0), linear-gradient(90deg, white 2px, transparent 0), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 0), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 0);
+    background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+}
+
+.dots {
+    background: #655;
+    background-image: radial-gradient(#d2b48c 30%, rgba(0, 0, 0, 0) 0%);
+    background-size: 30px 30px;
+}
+
+.polka-dots {
+    background: #655;
+    background-image: radial-gradient(#d2b48c 30%, rgba(0, 0, 0, 0) 0%), radial-gradient(#d2b48c 30%, rgba(0, 0, 0, 0) 0%);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+
+.checkerboard {
+    background: #eee;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, 0.25) 0), linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, 0.25) 0);
+    background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+    background-size: 30px 30px;
+}
+
+.blurry {
+    background-image: linear-gradient(125deg, rgba(206, 190, 41, 0.3) 0%, rgba(155, 31, 80, 0.3) 33%, rgba(41, 137, 216, 0.3) 71%, rgba(137, 180, 255, 0.3) 95%), linear-gradient(-88deg, rgba(206, 190, 41, 0.8) 0%, rgba(155, 31, 80, 0.3) 33%, rgba(41, 137, 216, 0.7) 71%, rgba(137, 180, 255, 0.7) 95%), linear-gradient(23deg, #cebe29 0%, rgba(155, 31, 80, 0.6) 33%, #2989d8 71%, #89b4ff 95%);
+}
+
+.colorspectrum {
+    background: linear-gradient(90deg, rgba(255, 128, 128, 0.65) 0%, rgba(255, 164, 128, 0.65) 10%, rgba(255, 202, 128, 0.65) 20%, rgba(255, 240, 128, 0.65) 30%, rgba(232, 255, 128, 0.65) 40%, rgba(193, 255, 128, 0.65) 50%, rgba(155, 255, 128, 0.65) 60%, rgba(128, 255, 138, 0.65) 70%, rgba(128, 255, 176, 0.65) 80%, rgba(128, 255, 215, 0.65) 90%, rgba(128, 255, 253, 0.65) 100%), linear-gradient(-90deg, rgba(204, 255, 254, 0.45) 0%, rgba(204, 241, 255, 0.45) 10%, rgba(204, 225, 255, 0.45) 20%, rgba(204, 210, 255, 0.45) 30%, rgba(213, 204, 255, 0.45) 40%, rgba(229, 204, 255, 0.45) 50%, rgba(244, 204, 255, 0.45) 60%, rgba(255, 204, 251, 0.45) 70%, rgba(255, 204, 235, 0.45) 80%, rgba(255, 204, 220, 0.45) 90%, rgba(255, 204, 205, 0.45) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* 07. HERO SLIDER
+--------------------------*/
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-background-size: cover;
+    background: #fff;
+  
+    background-position: center;
+    /*box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);*/
+}
+
+.hero-slider ul {
+    list-style: none !important;
+}
+
+.hero-slider,
+.hero-slider .slides,
+.hero-slider .slides .slide {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-slider .slides .slide {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-family: 'Raleway';
+    font-size: 160px;
+    font-weight: 200;
+    line-height: 160px;
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+    z-index: 1000;
+   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+    0  6px 30px 5px rgba(0, 0, 0, .12),
+    0  8px 10px -5px rgba(0, 0, 0, .4)!important;
+}
+
+@media (max-width: 991px) {
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-family: 'Raleway';
+    font-size: 120px;
+    font-weight: 200;
+    line-height: 120px;
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+    z-index: 1000;
+   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14),
+    0  6px 30px 5px rgba(0, 0, 0, .12),
+    0  8px 10px -5px rgba(0, 0, 0, .4)!important;
+}
+}
+/*slider navigation*/
+
+.flex-control-paging {
+    position: fixed;
+    bottom: 14px;
+    left: 50%;
+    list-style: none;
+    line-height: 0;
+    margin: 0;
+    z-index: 99999;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.flex-control-paging li {
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid #000;
+}
+
+.flex-control-paging li a {
+    display: block;
+    text-decoration: none;
+    text-indent: -9999px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.flex-control-paging li a.flex-active {
+    background: #000;
+}
+
+
+/* 08. PORTFOLIO
+-----------------------------*/
+
+.portfolio-wrapper {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.portfolio-wrapper.with-borders {
+    width: 100%;
+    padding: 0 50px 50px 50px !important;
+}
+
+.item {
+    float: left;
+    position: relative;
+}
+
+.item:after {
+    padding-top: 80%;
+    display: block;
+    content: "";
+}
+
+.item.wide:after {
+    padding-top: 40%;
+}
+
+.item.tall:after {
+    padding-top: 160%;
+}
+
+.item.wide-tall:after {}
+
+
+/* 2;4 column items */
+
+.col-2 .item {
+    width: 50%
+}
+
+.col-2 .item.wide {
+    width: 100%;
+}
+
+.col-2 .item.wide-tall {
+    width: 100%;
+}
+
+.col-4 .item {
+    width: 25%
+}
+
+.col-4 .item.wide {
+    width: 50%;
+}
+
+.col-4 .item.wide-tall {
+    width: 50%;
+}
+
+@media (max-width: 991px) {
+    .item {
+        width: 100% !important
+    }
+    [data-space] .item-img {
+        margin-top: 0px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+.item-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.item-img {
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+}
+
+.item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .8);
+    opacity: 0;
+    -webkit-transform: scale(.9);
+    -ms-transform: scale(.9);
+    transform: scale(.9);
+    transition: all .3s ease;
+}
+
+.item-link:hover .item-overlay {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.item-overlay > h5 {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Abel';
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
+}
+
+.item-overlay > h5:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background-color: #fff;
+    bottom: -16px;
+}
+
+
+/* 09. PORTFOLIO FILTER
+-------------------------*/
+
+.filter {
+    text-align: center;
+}
+
+.filter ul li {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline-block;
+    margin: 8px;
+    cursor: pointer;
+    opacity: .7;
+    letter-spacing: 1px;
+    font-family: 'Abel'
+}
+
+.filter ul li.active {
+    opacity: 1;
+}
+
+
+/* 10. BLOCKQUOTE
+------------------*/
+
+blockquote {
+    border: none;
+    font-size: 15px;
+    padding: 10px 0;
+    letter-spacing: .1em;
+}
+
+blockquote footer {
+    font-size: 85%;
+}
+
+
+/* 11. SKILLS
+------------------------*/
+
+.skill {
+    margin-bottom: 10px;
+}
+
+.skill .skill-title {
+    text-transform: uppercase;
+}
+
+.skill .skill-bar {
+    position: relative;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: all 1.5s ease;
+}
+
+.skill-bar span {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-family: 'Abel';
+}
+
+
+/* 12. COUNTERS
+------------------------*/
+
+.counter-num {
+    font-weight: bold;
+    letter-spacing: .1em;
+}
+
+.counter h5 {
+    text-transform: capitalize;
+}
+
+
+/* 13. TEAM
+------------------------*/
+
+.avatar {
+    position: relative;
+    overflow: hidden;
+}
+
+.social {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: all .4s ease;
+}
+
+.social a {
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    margin: 7px;
+}
+
+.team-member:hover .social {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+
+/* 14. TABS
+------------------------*/
+
+.tab-nav {
+    list-style: none;
+}
+
+.tab-nav li {
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-family: 'Abel';
+}
+
+.tab-nav li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.tab-nav li.active:after {
+    opacity: 1;
+    width: 100%;
+}
+
+.tab-panels > div {
+    display: none;
+    font-size: 14px;
+}
+
+.tab-panels > .active {
+    display: block;
+}
+
+
+/* 15. TOGGLES
+------------------------*/
+
+.toggle {
+    margin-bottom: 10px;
+}
+
+.toggle-title {
+    position: relative;
+    display: inline-block;
+    font-family: 'Abel';
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.toggle-title:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    bottom: -3px;
+    transition: all .5s ease;
+}
+
+.toggle.active .toggle-title:after {
+    width: 100%;
+}
+
+.toggle-content {
+    padding-top: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.toggle.active .toggle-content {
+    display: block;
+}
+
+
+/* 16. ICON BOX
+------------------------*/
+
+.icon-box {
+    text-align: center;
+}
+
+.icon-box i {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.icon-box .box-details {}
+
+.box-details h4 {
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.box-details p {
+    font-size: 13px;
+}
+
+
+/* 17. IMAGE SLIDER
+--------------------*/
+
+.img-slider {
+    position: relative;
+}
+
+.img-slider img {
+    width: 100%;
+}
+
+.img-slider ul {
+    list-style: none;
+}
+
+.img-slider .flex-direction-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    opacity: .5;
+    transition: all .3s ease;
+}
+
+.img-slider:hover .flex-direction-nav {
+    opacity: 1;
+}
+
+.img-slider .flex-direction-nav li {
+    display: inline-block;
+}
+
+.img-slider .flex-next,
+.img-slider .flex-prev {
+    background: #fff;
+    display: block;
+    padding: 5px;
+    font-size: 40px;
+    color: #555;
+}
+
+.img-slider .flex-prev {}
+
+.post .img-slider .flex-next,
+.post .img-slider .flex-prev {
+    padding: 0;
+}
+
+
+/* 18. BLOG
+------------------------*/
+
+.post {
+    margin-bottom: 30px;
+}
+
+@media( max-width: 767px) {
+    .post {
+        width: 100%;
+    }
+}
+
+.post a {
+    text-decoration: none;
+}
+
+.post-content {
+    background-color: #F7F7F7;
+    padding: 20px 20px 10px;
+}
+
+.post-content .date {
+    text-transform: uppercase;
+    font-family: 'Lato';
+    font-size: 13px;
+}
+
+.post iframe {
+    border: none;
+    display: block;
+}
+
+
+/* 19. CLIENTS
+-----------------*/
+
+.clients {
+    text-align: center;
+}
+
+.clients img {
+    width: 50%;
+    max-width: 130px;
+    height: auto;
+    display: inline-block;
+    opacity: .7;
+    transition: all .3s ease;
+}
+
+.clients img:hover {
+    opacity: 1;
+}
+
+
+/* 20. SCROLL TO TOP
+------------------------*/
+
+.to-top {
+    display: none;
+    position: fixed;
+    right: 40px;
+    bottom: 50px;
+    font-family: 'Abel';
+    background-color: #fff;
+    opacity: .8;
+    transition: all .3s ease;
+    z-index: 999;
+    text-decoration: none;
+    cursor: pointer;
+    width: 46px;
+    height: 46px;
+    font-size: 60px;
+    overflow: hidden;
+    color: rgba(0, 0, 0, .7);
+}
+
+.to-top i {
+    margin-left: -7px;
+    margin-top: -7px;
+}
+
+.to-top:hover {
+    opacity: 1;
+}
+
+#footer.fixed .to-top {
+    width: 30px;
+    height: 50px;
+    background: none;
+    bottom: 0px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+#footer.fixed .to-top i {
+    margin-left: -4px;
+    margin-top: -4px;
+}
+
+
+/* 21. GOOGLE MAP
+----------------------*/
+
+#google-map {
+    width: 100%;
+    height: 100%;
+}
+
+#google-map img {
+    max-width: none;
+}
+
+.map img {
+    height: 695px;
+}
+
+.map-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background: #eeeeee;
+    color: #fff;
+    padding: 10px 20px;
+    font-family: 'Abel';
+    text-transform: uppercase;
+    z-index: 889;
+}
+
+
+/* 22. CONTACT INFO
+---------------------*/
+
+.contact-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    color: #fff;
+    z-index: 888;
+    display: block;
+}
+
+.contact-info .info-box {
+    margin-bottom: 60px;
+    margin-left: 15%
+}
+
+.contact-info i {
+    float: left;
+}
+
+.contact-info .details {
+    margin-left: 80px;
+}
+
+
+/* 23. CONTACT FORM
+----------------------*/
+
+#contact {
+    font-family: 'Abel';
+}
+
+#contact form {}
+
+#contact form input,
+#contact form textarea {
+    background: none;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-bottom: 40px;
+    transition: all .3s ease;
+}
+
+#contact form textarea {
+    min-height: 140px;
+    resize: none;
+    border: 0;
+}
+
+#contact form input:focus {
+    border-bottom: 1px solid #000;
+}
+
+#contact #submit {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.contact-message {
+    display: none;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 50px 0;
+}
+
+
+/* 24. PAGINATION
+------------------------*/
+
+.pagination {
+    width: 100%;
+    text-align: center;
+    margin: 70px 0 35px;
+}
+
+.pagination i {
+    vertical-align: middle;
+    margin-top: -3px;
+    font-size: 33px;
+}
+
+.pagination a {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Abel';
+    margin: 0 10px;
+    opacity: .7;
+}
+
+.pagination a:hover {
+    opacity: 1;
+}
+
+.pagination span {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+
+/* 25. FOOTER
+------------------------*/
+
+#footer {
+    padding: 55px 0;
+    background-color: #fff;
+    z-index: 9999;
+    text-align: center;
+}
+
+#footer.fixed {
+    height: 50px;
+    padding: 0 50px;
+    padding-top: 13px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: none;
+}
+
+#footer.fixed .container {
+    width: 100%;
+    padding: 0;
+}
+
+#footer .copyright {
+    color: #777;
+    font-size: 13px;
+    letter-spacing: .1em;
+    margin-top: 13px;
+}
+
+#footer.fixed .copyright {
+    float: left;
+    margin-top: 0;
+}
+
+#footer.fixed .social-links {
+    float: right;
+}
+
+#footer .social-links a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    padding: 0 7px;
+    transition: all .3s ease;
+}
+
+#footer .social-links:hover a {
+    opacity: .6;
+}
+
+#footer .social-links a:hover {
+    opacity: 1;
+}
+
+/* Localized */
